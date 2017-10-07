@@ -1,0 +1,26 @@
+@import '~styles/env/entry.styl';
+.list
+	display:flex;
+	flex-wrap:wrap;
+	margin:-.4em -1.2em;
+	padding:.4em 1.2em;
+	max-height:6.8em;
+	overflow:hidden;
+	+below($breakpoints.md)
+		flex-direction:column;
+		max-height:none;
+		overflow:visible;
+		padding-left:0;
+		padding-right:0;
+
+.listItem
+	margin:.4em 1.2em;
+	display:block;
+	line-height:2.4em;
+	color:#fff;
+
+.isActive
+	background:rgba(red,20%);
+
+.listItemText
+	font-size:1.8em;

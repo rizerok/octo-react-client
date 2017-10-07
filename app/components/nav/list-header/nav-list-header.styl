@@ -1,0 +1,79 @@
+@import '~styles/env/entry.styl';
+.list
+	position:relative;
+	padding-left: 2.7em;
+
+.listArea
+	overflow:hidden;
+	display:flex;
+	flex-wrap:wrap;
+	height:4.6em;
+
+.listItem
+	display:block;
+	//margin-left:1.5em;
+	//margin-right:1.5em;
+	//&:first-child
+	//	margin-left:0;
+	//&:last-child
+	//	margin-right:0;
+
+.listItem.isParent
+	.listItemText
+		margin-right:.5em;
+
+.listItemTitle
+	display:flex;
+	align-items:center;
+	padding:1.3em 1.5em;
+	line-height:2em;
+
+.listItemText
+	white-space:nowrap;
+	text-transform:uppercase;
+	font-size:1.8em;
+	font-family:$font-second;
+
+.triangle
+	font-size:.8em;
+	display:block;
+	transform:rotate(-30deg);
+	transition:transform .2s;
+	padding-left:.4em;
+
+.isActive
+	background:rgba(red,20%);
+
+.subList
+	bottom:100%;
+	width:0;
+	height:0;
+	overflow:hidden;
+	opacity:0;
+	//transition:opacity .2s;
+	z-index:1;
+
+
+
+.listItem:hover
+	&.isParent
+		.listItemTitle
+			background:#174D57;
+			color:#fff;
+		.triangle
+			transform:rotate(30deg);
+
+	.subList
+		color:#fff;
+		position:absolute;
+		top:100%;
+		width:auto;
+		height:auto;
+		overflow:visible;
+		opacity:1;
+
+
+
+
+
+//.subListItem

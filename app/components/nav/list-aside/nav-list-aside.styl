@@ -1,0 +1,26 @@
+@import '~styles/env/entry.styl';
+.listItem + .listItem
+	margin-top:2em;
+
+.link
+	padding:0 3em;
+	display:block;
+	line-height:3.2em;
+	.isActive
+		background:rgba(red,20%);
+
+	& > *
+		font-size:1.8em;
+		text-transform:uppercase;
+		//color:#fff;
+		font-weight:bold;
+		font-family:$font-second;
+		decoration-underline('fade-in',#fff,#fff,.1em);
+
+.address
+	margin-top:8em;
+	padding:0 3em;
+	line-height:2.4em;
+	color:#fff;
+	& > *
+		font-size:1.6em;

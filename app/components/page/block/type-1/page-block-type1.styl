@@ -1,0 +1,65 @@
+@import '~styles/env/entry';
+$def-fsz-base = 1.8em;
+$sb-ver-indents = 2em;
+
+.block
+	font-size: $def-fsz-base;
+	margin-top: val-em($sb-ver-indents) * -1;
+
+
+.title
+	$fsz = val-em(3);
+	font-size: $fsz;
+	line-height: val-rel(3.6, $fsz);
+	font-weight: bold;
+	+from-width($breakpoints.lg)
+		$fsz = val-em(1.8);
+		font-size: $fsz;
+		line-height: val-rel(3, $fsz);
+		text-transform: uppercase;
+		font-weight: bold;
+
+
+.note
+	$fsz = val-em(1.6);
+	font-size: $fsz;
+	line-height: val-rel(2.4, $fsz);
+	font-style: italic;
+	&.isFilled
+		margin-top: val-rel($sb-ver-indents, $fsz);
+.header
+	&.isFilled
+		margin-top: val-em($sb-ver-indents);
+
+.redactor
+	$fsz = val-em(1.8);
+	font-size: $fsz;
+	&.isFilled
+		margin-top: val-rel($sb-ver-indents, $fsz);
+
+.lastBlock
+	margin-top:val-em(3);
+
+
+.note
+	+from-width($breakpoints.md)
+		order: 2;
+.lastBlock
+	+from-width($breakpoints.md)
+		order: 3;
+.redactor
+	margin-bottom: 0;
+	+from-width($breakpoints.md)
+		order: 1;
+
+.imgSet
+	margin-top: $glb-gutter* -1;
+	+from-width($breakpoints.md)
+		margin-top: 0;
+
+.imgSetItem
+	width: 100%;
+	margin-top: $glb-gutter;
+	border-radius: .4rem;
+	+from-width($breakpoints.md)
+		margin-top: 0;

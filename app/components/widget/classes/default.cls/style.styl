@@ -1,0 +1,18 @@
+@import '~styleEnv';
+
+.container
+	padding-top:4em;
+	padding-bottom:6em;
+
+.title
+	& > *
+		@extends $ui.text.h2;
+
+.description
+	margin-top:2em
+	line-height:2.4em;
+	& > *
+		font-size:1.6em;
+
+.content
+	margin-top:2em;

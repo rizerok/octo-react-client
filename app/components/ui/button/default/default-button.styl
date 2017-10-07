@@ -1,0 +1,9 @@
+@import '~styleEnv';
+
+.button
+	button-default(#164d57,darken(#164d57,20%),#fff);
+	padding:1em;
+	border-radius:1em;
+	white-space:nowrap;
+	& > *
+		@extends $ui.text.h5;

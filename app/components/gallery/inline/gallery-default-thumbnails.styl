@@ -1,0 +1,50 @@
+@import '~styles/env/entry';
+
+
+.socket
+	position: relative;
+	margin-top: $glb-gutter;
+	&:first-child
+		margin-top: 0;
+
+.socketArea
+	cursor: pointer
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	border-radius: 4px;
+	overflow: hidden;
+	top:0;
+	left:0;
+
+.ratiobox
+	border-radius: 1em;
+	overflow:hidden;
+	ratiobox(200,116);
+	img
+		border-radius: 1em;
+		width: 100%;
+		height: 100%;
+		object-fit:cover;
+		&.bordered
+			border:.2em solid #fff;
+
+.item
+	width: 100%;
+	position: relative;
+
+.moreCount
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(#000, .4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4.8rem;
+	font-weight: bold;
+	color: #fff;

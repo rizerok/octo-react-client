@@ -1,0 +1,18 @@
+.button
+	cursor:pointer;
+	height:2em;
+	width:2em;
+	position:relative;
+	&:before,
+	&:after
+		content:'';
+		height:.2em;
+		width:100%;
+		background:#fff;
+		position:absolute;
+		transform-origin:center;
+		left:0;
+	&:before
+		transform:rotate(45deg);
+	&:after
+		transform:rotate(-45deg);

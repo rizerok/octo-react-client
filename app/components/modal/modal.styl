@@ -1,0 +1,85 @@
+@import '~styles/env/entry.styl';
+
+.modal
+	z-index:2;
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background:rgba(#000,50%);
+	display:flex;
+	align-items:center;
+	justify-content: center;
+
+$close-button-size = 20em;
+
+.closeButton
+	z-index: 1;
+	position: absolute
+	top: 0
+	right: 0
+	width: ($close-button-size / 2);
+	height: ($close-button-size / 2);
+	text-align right
+	outline none
+	cursor pointer
+	transition opacity .25
+	&:hover
+		&:before
+			opacity .2
+	&:before
+		display: block
+		position: absolute
+		top: 0;
+		right 0;
+		height: $close-button-size;
+		width: $close-button-size;
+		transform: translate(50%, -50%);
+		z-index: 2;
+		border-radius: 100%;
+		background: #fff
+		opacity .1
+		content ''
+		transition .25s opacity
+	&:hover
+		.closeButtonIcon
+			opacity 1
+	+below($breakpoints.xs)
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		top: auto;
+		right: auto;
+		width: $close-button-size;
+		&:before
+			transform: none;
+
+.closeButtonIcon
+	display inline-block
+	margin 2.4em 2.4em 0 0
+	width 2.4em
+	height 2.4em
+	position: relative;
+	transition opacity .25s
+	opacity .7
+
+	&:before
+		transform: translate(-50%) rotate(45deg);
+
+	&:after
+		transform: translate(-50%) rotate(-45deg);
+
+	&:before,
+	&:after
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: .2em;
+		background: #fff;
+		transform-origin: center;
+
+	+below($breakpoints.xs)
+		margin: 4.6em 8.7em 0 0;

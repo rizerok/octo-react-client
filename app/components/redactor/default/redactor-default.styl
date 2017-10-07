@@ -1,0 +1,162 @@
+@import '~styleEnv';
+$def-fsz-base := 1.8rem;
+
+val-em($needed)
+	unit($needed/$def-fsz-base, em)
+
+val-rel($needed, $have)
+	unit($needed/$def-fsz-base /$have, em)
+
+
+.redactorDefault
+	display: block;
+	line-height: val-em(3.2);
+
+	& > *
+		font-size: 1em;
+		line-height: val-em(3.2);
+		margin-top: val-em(3);
+
+	& > *:first-child
+		margin-top: 0;
+
+	img
+		width: 100%;
+		display: block;
+		margin-top: 2em;
+
+	//=========headers============
+	h2
+		$fsz = val-em(3);
+		font-size: $fsz;
+		line-height: val-rel(3.6, $fsz);
+		font-weight: bold;
+		margin-top: val-rel(6, $fsz);
+
+	h3
+		$fsz = val-em(2.4);
+		font-size: $fsz;
+		line-height: val-rel(3, $fsz);
+		font-weight: bold;
+		margin-top: val-rel(4, $fsz);
+
+	h4, h5, h6
+		$fsz = val-em(1.8);
+		font-size: $fsz;
+		line-height: val-rel(3, $fsz);
+		font-weight: bold;
+		margin-top: val-rel(3, $fsz);
+
+	//=========ul================
+	ul
+		margin-top: val-em(3);
+
+		& > li
+			padding-left: val-em(4);
+			position: relative;
+
+			&:after
+				$fsz = val-em(2);
+				font-size: $fsz;
+				content: '•';
+				position: absolute;
+				left: val-rel(.7, $fsz);
+				top: 50%;
+				transform: translateY(-50%);
+
+		& > li + & > li
+			margin-top: val-em(3);
+
+	ol
+		margin-top: val-em(3);
+		counter-reset: section;
+
+		& > li
+			padding-left: val-em(4);
+			position: relative;
+
+			&:after
+				$fsz = val-em(1.8);
+				font-size: $fsz;
+				font-weight: bold;
+				content: counter(section) '';
+				counter-increment: section;
+				position: absolute;
+				left: val-rel(.7, $fsz);
+				top: 0;
+				bottom: 0;
+
+		& > li + & > li
+			margin-top: val-em(3);
+
+	//=========ol================
+	table
+		$fsz = val-em(1.6);
+		font-size: $fsz;
+		display: block;
+		overflow-x: auto;
+		//width: 100%;
+		//margin-left:val-rel(1.6,$fsz)*-1;
+		//margin-right:val-rel(1.6,$fsz)*-1;
+
+		td
+			text-align: left;
+			line-height: val-rel(2.4, $fsz);
+			vertical-align: baseline;
+			padding-top: val-rel(1.5, $fsz);
+			padding-bottom: val-rel(1.5, $fsz);
+			padding-right: val-rel(6, $fsz);
+			//border-top: val-rel(.1, $fsz) solid #000;
+
+		th,
+		thead td
+			text-align: left;
+			//font-weight: bold;
+			line-height: val-rel(2.4, $fsz);
+			vertical-align: bottom;
+			border-bottom: val-rel(.1, $fsz) solid #cccccc;
+			padding-bottom: val-rel(2, $fsz);
+			padding-right: val-rel(3, $fsz);
+
+		th:first-child,
+		td:first-child
+			//padding-left: val-rel(1.6, $fsz);
+			padding-left: 0;
+
+		thead,
+		tbody
+			width: 100%;
+
+	blockquote
+		$fsz = val-em(2.6);
+		font-size: $fsz;
+		line-height: val-rel(3.6, $fsz);
+		font-style: italic;
+		padding-left: val-rel(8, $fsz);
+		position: relative;
+
+		&:before
+			$fsz = val-rel(6, $fsz);
+			font-size: $fsz;
+			line-height: .45em;
+			font-style: normal;
+			font-weight: bold;
+			content: '«';
+			position: absolute;
+			left: val-rel(2, $fsz);
+			width: val-rel(3.5, $fsz);
+			height: val-rel(3, $fsz);
+			color: #898989;
+			top: 0;
+
+	img
+		width: auto;
+		max-width: 100%;
+		height: auto;
+	strong
+		font-weight:bold;
+
+	a
+		decoration-underline('fade-in',$glb-color.link,$glb-color.link,.1em);
+
+

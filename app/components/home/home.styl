@@ -1,0 +1,55 @@
+@import '~styleEnv';
+.container
+	padding-bottom:8em;
+
+.slider
+	overflow:hidden;
+	background:#0a5a69;
+	padding-top:2.5em;
+	padding-bottom:2.5em;
+	margin-bottom:4em;
+
+.sliderArea
+	display:block;
+	overflow:visible !important;
+	margin-left:$glb-half-gutter * -1;
+	margin-right:$glb-half-gutter * -1;
+
+
+.sliderItem
+	padding-left:$glb-half-gutter;
+	padding-right:$glb-half-gutter;
+	position:relative;
+	img
+		width:100%;
+		height:auto;
+	&:before
+		content:'';
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:$glb-half-gutter;
+		right:$glb-half-gutter;
+		opacity:.2;
+		background:#000;
+
+.sliderText
+	padding:3em;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:$glb-half-gutter;
+	right:$glb-half-gutter;
+	color:#fff;
+
+.sliderTitle
+	line-height:3.2em;
+	& > *
+		@extend $ui.text.h4;
+
+.sliderDescription
+	maring-top:1em;
+	font-weight:bold;
+	& > *
+		font-size:1.6em;
+		line-height:2.4em;

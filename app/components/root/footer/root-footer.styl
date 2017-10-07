@@ -1,0 +1,41 @@
+@import '~styles/env/entry.styl';
+
+.footer
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:2em;
+	background-color:#313131;
+	height:13.5em;
+	+below($breakpoints.md)
+		flex-wrap:wrap;
+		height:auto;
+		padding:3em 0;
+.area
+	flex-wrap:nowrap;
+	+below($breakpoints.md)
+		flex-wrap:wrap;
+
+.socketLogo
+	padding-left:$glb-half-gutter;
+	padding-right:$glb-half-gutter;
+	width:(100%/12*2);
+	min-width:unit(14.6em + $glb-half-gutter,em);
+
+.socket + .socket
+	+below($breakpoints.md)
+		margin-top:3em;
+
+
+.info
+	color:#fff;
+	line-height:2.4em;
+	text-align:right;
+	& > *
+		font-size:1.4em;
+	+below($breakpoints.md)
+		text-align:left;
+
+.noMobile
+	+below($breakpoints.md)
+		display:none;

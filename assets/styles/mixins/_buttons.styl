@@ -1,0 +1,25 @@
+@import '~styles/default/_vars.styl';
+button-default($bg-color,$hover-bg-color,$text-color,$hover-text-color = $text-color)
+	background:$bg-color;
+	color:$text-color;
+	&:hover
+		transition:background $glb-anim-drt, color $glb-anim-drt;
+		background:$hover-bg-color;
+		cursor:pointer;
+		if($hover-text-color)
+			color:$hover-text-color;
+
+button-ghost($border-color,$hover-bg-color,$hover-text-color)
+	transition:border $glb-anim-drt, background-color $glb-anim-drt, color $glb-anim-drt;
+	background:transparent;
+	color:$border-color;
+	position:relative;
+	if $border-color == inherit
+		border:.2em solid;
+	else
+		border:.2em solid $border-color;
+	&:hover
+		background:$hover-bg-color;
+		color:$hover-text-color;
+		border:.2em solid;
+		cursor:pointer;

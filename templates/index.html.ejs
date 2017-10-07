@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:700&amp;subset=cyrillic" rel="stylesheet">
+    <title>project 2</title>
+
+    <% for (let key in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[key] %>"><% } %>
+</head>
+<body>
+<div id="root"></div>
+
+
+
+<% for (let key in htmlWebpackPlugin.files.js) { %>
+
+<script src="<%= htmlWebpackPlugin.files.js[key] %>"></script><% } %>
+</body>
+</html>
