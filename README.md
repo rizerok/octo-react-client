@@ -8,6 +8,7 @@ open octo project
 ```sh
 cd frontend
 git clone https://github.com/rizerok/octo-react-client.git .
+rm -rf .git
 npm i
 ```
 
@@ -34,10 +35,14 @@ devServer:{
 
 Usage:
 -------------------
-```npm run build:dev```
+only for dev
 
-```npm run build:prod```
+```npm run build:dev```
 
 ```npm run watch:dev```
 
+only for prod
+
 ```npm run build:prod```
+
+```npm run watch:prod```
